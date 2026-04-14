@@ -26,9 +26,9 @@ Send Slack `/teamspirit_in` / `/teamspirit_out` command from terminal or Raycast
 4. Reload Raycast script directory
    - Open Raycast launcher and searh for `Reload Script Directories`
 5. (Optional) Set aliases, for example
-   - `teamspirit.sh` -> `ts`
-   - `teamspirit-in.sh` -> `tsin`
-   - `teamspirit-out.sh` -> `tsout`
+   - `TeanSirit` -> `ts`
+   - `TeanSirit in` -> `tsin`
+   - `TeanSirit out` -> `tsout`
 6. Open Raycast launcher and run the command
    - `TeamSpirit`: Sends `/teamspirit_in` or `/teamspirit_out` according to the commandline argument
    - `TeamSpirit in`: Sends `/teamspirit_in`
