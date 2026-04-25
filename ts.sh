@@ -15,6 +15,27 @@ if [[ "$1" != "in" && "$1" != "out" ]]; then
     exit 1
 fi
 
+if [[ "$1" == "out" ]]; then
+    current_time=$(date +%H%M)
+    cutoff_time=1900
+
+    if (( current_time < cutoff_time )); then
+        confirmation_message="まだ19:00になっていません。本当に退勤打刻しますか？"
+        selected_button=$(osascript <<EOT
+try
+    button returned of (display dialog "$confirmation_message" with title "TeamSpirit" buttons {"Cancel", "OK"} default button "Cancel")
+on error number -128
+    return "Cancel"
+end try
+EOT
+)
+        if [[ "$selected_button" != "OK" ]]; then
+            echo "Canceled: ts out was not sent."
+            exit 0
+        fi
+    fi
+fi
+
 # チームID # ブラウザ版Slackで開いたときのURL https://app.slack.com/client/xxxxxxxx[/yyyyyyyy] のxxxxxxxx部分
 TEAM_ID="XXXXXXXXXX"
 
