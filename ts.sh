@@ -34,6 +34,25 @@ EOT
             exit 0
         fi
     fi
+elif [[ "$1" == "in" ]]; then
+    current_time=$(date +%H%M)
+    cutoff_time=1600
+
+    if (( current_time >= cutoff_time )); then
+        confirmation_message="16:00を過ぎています。本当に出勤打刻しますか？"
+        selected_button=$(osascript <<EOT
+try
+    button returned of (display dialog "$confirmation_message" with title "TeamSpirit" buttons {"Cancel", "OK"} default button "Cancel")
+on error number -128
+    return "Cancel"
+end try
+EOT
+)
+        if [[ "$selected_button" != "OK" ]]; then
+            echo "Canceled: ts in was not sent."
+            exit 0
+        fi
+    fi
 fi
 
 # チームID # ブラウザ版Slackで開いたときのURL https://app.slack.com/client/xxxxxxxx[/yyyyyyyy] のxxxxxxxx部分
