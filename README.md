@@ -23,8 +23,8 @@
      - ブラウザで https://geniee.slack.com/ を開いてログインしたときの `https://app.slack.com/client/xxxxxxxx[/yyyyyyyy]` の `xxxxxxxx` 部分
    - `CHANNEL_ID`: Slack の送信先チャンネルの ID
      - Slack 画面右上の「︙」をクリック → 「チャンネル/アプリの詳細を開く」をクリック → 最下部にある「チャンネルID」をコピー
-   - `TS_IN_CUTOFF_TIME`: 出勤打刻時に確認ダイアログを出すしきい値（例: `1600`）
-   - `TS_OUT_CUTOFF_TIME`: 退勤打刻時に確認ダイアログを出すしきい値（例: `1900`）
+   - `TS_IN_CUTOFF_TIME`: 遅すぎる出勤打刻時に確認ダイアログを出す時間のしきい値（例: `1600`）
+   - `TS_OUT_CUTOFF_TIME`: 早すぎる退勤打刻時に確認ダイアログを出す時間のしきい値（例: `1900`）
 
 ## 使い方
 
