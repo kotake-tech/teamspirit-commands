@@ -44,7 +44,7 @@ if [[ "$1" == "out" ]]; then
     current_time=$(date +%H%M)
     cutoff_time=$TS_OUT_CUTOFF_TIME
 
-    if (( current_time < cutoff_time )); then
+    if (( 10#$current_time < 10#$cutoff_time )); then
         confirmation_message="まだ$(format_time "$cutoff_time")になっていません。本当に退勤打刻しますか？"
         selected_button=$(osascript <<EOT
 try
@@ -63,7 +63,7 @@ elif [[ "$1" == "in" ]]; then
     current_time=$(date +%H%M)
     cutoff_time=$TS_IN_CUTOFF_TIME
 
-    if (( current_time >= cutoff_time )); then
+    if (( 10#$current_time >= 10#$cutoff_time )); then
         confirmation_message="$(format_time "$cutoff_time")を過ぎています。本当に出勤打刻しますか？"
         selected_button=$(osascript <<EOT
 try
