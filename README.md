@@ -21,7 +21,7 @@
    cp .env.example .env
    ```
    - `TEAM_ID`: SlackのワークスペースのID
-     - ブラウザ版Slackで開いたときのURL `https://app.slack.com/client/xxxxxxxx[/yyyyyyyy]`の`xxxxxxxx`部分
+     - ブラウザで https://geniee.slack.com/ を開いてログインしたときの `https://app.slack.com/client/xxxxxxxx[/yyyyyyyy]`の`xxxxxxxx`部分
    - `CHANNEL_ID`: Slackの送信先チャンネルのID
      - Slack画面右上の「︙」をクリック→「チャンネル/アプリの詳細を開く」をクリック→最下部にある「チャンネルID」をコピー
    - `TS_IN_CUTOFF_TIME`: 出勤打刻時に確認ダイアログを出すしきい値（例: `1600`）
