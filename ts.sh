@@ -102,3 +102,9 @@ tell application "System Events"
     keystroke return using command down
 end tell
 EOT
+
+# 任意の追加処理（存在する場合のみ実行）
+EXTRA_SCRIPT="${SCRIPT_DIR}/extra.sh"
+if [[ -f "$EXTRA_SCRIPT" ]]; then
+    bash "$EXTRA_SCRIPT" "$1"
+fi
